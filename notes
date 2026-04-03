@@ -1,0 +1,8 @@
+How to do Database connection 
+=> there are mainly two ways to connect database 
+
+1.  database se jab bhi hum baat karne ki kosis karenge toh problem aa sakti hai 
+    i.e we need to wrap things up in Try/Catch or Promises
+
+2.  and database is present in another continent i.e database se jab bhi baat karenge toh time lagta hai 
+    so Async/Await lagana hi padega 
