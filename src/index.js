@@ -6,9 +6,50 @@ import connectDb from './db/index.js';
 dotenv.config({path : './env'});
 
 connectDb()
+.then(()=>{
 
-import express from 'express';
-const app = express();
+    app.on("error", (error) =>{
+        console.log("Error :" , error);  // this will log the error to the console if there is an error with the app, such as if the port is already in use or if there is a problem with the server.
+        throw error;
+     })
+
+    app.listen(process.env.PORT || 8000 , ()=>{   
+        console.log(`Server is running on port : ${process.env.PORT || 8000}`);
+        
+    })
+    
+})
+.catch((err)=>{
+    console.log('Error connecting to database' , err);
+    
+})
+
+
+
+// when a asynchoronous function is called, it returns a promise. If the function throws an error, the promise will be rejected with that error. If the function returns a value, the promise will be resolved with that value. If the function does not return anything, the promise will be resolved with undefined.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* function connectDb(){}
     
  connectDb();    */    
